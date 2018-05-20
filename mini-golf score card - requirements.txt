@@ -1,0 +1,25 @@
+Game screen
+  Current game
+  Completed games list
+    Delete completed games option
+  New game
+
+New game screen
+  Player list
+    Add, edit and delete player option
+      Player's name
+      Player's avatar
+      
+  Start game
+ 
+Game screen (current game)
+  Player scores per hole list
+  Add hole
+  Record player scores
+  End game
+    Highlight winner
+  
+Game screen (compelted game)
+  Player scores per hole list
+    Highlight winner
+    Delete game
