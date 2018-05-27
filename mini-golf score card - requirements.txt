@@ -9,17 +9,17 @@ New game screen
     Add, edit and delete player option
       Player's name
       Player's avatar
-      
+
   Start game
- 
+
 Game screen (current game)
   Player scores per hole list
   Add hole
   Record player scores
   End game
     Highlight winner
-  
-Game screen (compelted game)
+
+Game screen (completed game)
   Player scores per hole list
     Highlight winner
     Delete game
