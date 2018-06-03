@@ -1,4 +1,4 @@
-const displayPicData = [{
+const displayPics = [{
   'name': 'angel',
   'image': 'angel_80_anim_gif.gif'
 },
@@ -232,4 +232,4 @@ const displayPicData = [{
 }
 ]
 
-export default displayPicData
+export default displayPics

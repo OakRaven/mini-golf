@@ -1,29 +1,33 @@
 <template>
   <div class="new-game">
-    <p>Complete the information below then click the start button.</p>
+    <h1>New Game</h1>
+    <p>To begin a new game, add your players and select the number of holes.</p>
 
-    <table class="table table-striped table-bordered">
-      <thead>
-        <tr>
-          <th>Player</th>
-          <th class="action-item">&nbsp;</th>
-          <th class="action-item">&nbsp;</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr  v-for="player in players" :key="player.id">
-          <td>{{ player.name }}</td>
-          <td class="action-item">
-            Edit
-          </td>
-          <td class="action-item">
-            Delete
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <button class="btn btn-default btn-block btn-add">Add</button>
-    <button class="btn btn-default btn-block btn-start">Start</button>
+    <hr>
+    <h2>Players</h2>
+    <b-alert variant="danger" :show="players.length == 0">You must add at least one player.</b-alert>
+    <b-button @click="onAddPlayerClicked" variant="primary" size="sm">Add</b-button>
+
+    <hr>
+    <h2>Course Type</h2>
+    <b-form-group>
+      <b-form-radio-group v-model="courseType">
+        <b-form-radio value="9-hole">9-Holes</b-form-radio>
+        <b-form-radio value="18-hole">18-Holes</b-form-radio>
+      </b-form-radio-group>
+    </b-form-group>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-sm">
+        <b-button @click="onBackClicked" variant="secondary" block>Back</b-button>
+      </div>
+      <div class="col-sm">
+        <b-button variant="primary" block :disabled="players.length == 0">Begin</b-button>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -33,19 +37,22 @@ export default {
 
   data () {
     return {
-      players: [{ id: 1, name: 'Mike' }, { id: 2, name: 'Tracy' }]
+      players: [],
+      courseType: '9-hole'
+    }
+  },
+
+  methods: {
+    onAddPlayerClicked () {
+      this.$router.push('/edit-player', { mode: 'adding' })
+    },
+
+    onBackClicked () {
+      this.$router.go(-1)
     }
   }
 }
 </script>
 
 <style scoped>
-.action-item {
-  width: 80px;
-  text-align: center;
-}
-button.btn-start {
-  position: absolute;
-  bottom: 1em;
-}
 </style>

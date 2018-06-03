@@ -1,35 +1,29 @@
 <template>
   <div class="home">
-    <div class="row">
-      <button class="col s12 waves-effect waves-light btn blue-grey">Current Game</button>
-    </div>
-    <div class="row">
-      <button class="col s12 waves-effect waves-light btn blue-grey">Completed Games</button>
-    </div>
-    <div class="row">
-      <button @click="onNewGameClicked" class="col s12 waves-effect waves-light btn blue-grey">New Game</button>
-    </div>
+    <h1>Mini-Golf Scorecard</h1>
 
-    <player-editor></player-editor>
+    <button class="btn btn-primary btn-block"
+      @click="goToNewGame">New Game</button>
+    <button class="btn btn-primary btn-block"
+      @click="goToPastGames">Past Games</button>
+    <button class="btn btn-primary btn-block"
+      @click="goToAbout">About Mini-Golf Scorecard</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-import PlayerEditor from '@/components/PlayerEditor'
-
 export default {
   name: 'home',
-  components: {
-    HelloWorld,
-    PlayerEditor
-  },
 
   methods: {
-    onNewGameClicked () {
-      this.$router.push('new-game')
+    goToNewGame () {
+      this.$router.push('/new-game')
+    },
+    goToPastGames () {
+      this.$router.push('/past-games')
+    },
+    goToAbout () {
+      this.$router.push('/about')
     }
   }
 }
